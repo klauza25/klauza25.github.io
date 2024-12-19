@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js" type="module"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    ul{
+      transition-property: opacity, left;
+  transition-duration: 3s, 5s, 2s, 1s;
+  transition: all 1s ease-out;
+    }
+
+  img{
+    height: 650px;
+  }
+        .carousel-item {
+            display: none;
+            position: relative; /* Pour positionner le texte par-dessus l'image */
+        
+        
+          }
+        .carousel-item.active {
+            display: block;
+        }
+    
+        @keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 2s forwards; /* Fade-in effect */
+    opacity: 1; /* Make sure to set it to 1 when the animation is done */
+}
+
+.animate-scale-in {
+    animation: scale-in 2s forwards; /* Scale-in effect */
+    opacity: 1; /* Ensure opacity is 1 */
+}
+
+.animate-slide-in {
+    animation: slide-in 2s forwards; /* Slide-in effect */
+    opacity: 1; /* Ensure opacity is 1 */
+}
+   
+  </style>
+</head>
+<body >
+    <header class=' flex shadow-md py-4 px-4 sm:px-10 bg-primary  font-[sans-serif] min-h-[70px] tracking-wide fixed w-full z-50'>
+        <div class='flex flex-wrap items-center justify-between gap-5 w-full text-4xl   font-bold'>
+          <a href="javascript:void(0)" class="text-secondary">le level
+          </a>
+          <!-- <img src="" alt="logo" class='w-36' /> -->
+          <div id="collapseMenu"
+            class='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50 '>
+            <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-white" viewBox="0 0 320.591 320.591">
+                <path
+                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                  data-original="#ffffff"></path>
+                <path
+                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                  data-original="#000000"></path>
+              </svg>
+            </button>
+      
+            <ul class=' lg:flex text-center gap-x-5 max-lg:space-y-4 max-lg:fixed max-lg:bg-primary max-md:text-white max-lg:w-1/2 max-lg:min-w-full max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full opacity-100 items-center max-lg:shadow-md max-lg:overflow-auto z-50'>
+              <li class='mb-6 hidden max-lg:block'>
+                <a href="javascript:void(0)" class="text-center text-bold text-4xl lg:text-secondary text-secondary">le level</a>
+              </li>
+              <li class='max-lg:border-b  text-white border-gray-300 max-lg:py-3 px-3'>
+                <a href="#acceuil" class='hover:text-secondary  lg:text-white  text-white block font-semibold text-lg transition duration-200'>Accueil</a>
+              </li>
+              <li class='max-lg:border-b  border-gray-300 max-lg:py-3 px-3'>
+                <a href="#nos-services" class='hover:text-secondary  lg:text-white  block font-semibold text-lg transition duration-200 max-lg: text-white '>Nos Services</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                <a href="#portfolio" class='hover:text-secondary  lg:text-white  text-white block font-semibold text-lg transition duration-200'>Portfolio</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                <a href="#nous-rejoindre" class='hover:text-secondary  lg:text-white  text-white block font-semibold text-lg transition duration-200'>Nous Rejoindre</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                <a href="#team" class='hover:text-secondary  lg:text-white  text-white block font-semibold text-lg transition duration-200'>Équipe</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                <a href="#contact" class='hover:text-secondary  lg:text-white  text-white block font-semibold text-lg transition duration-200'>Contact</a>
+              </li>
+            </ul>
+            
+          </div>
+      
+          <div class='flex max-lg:ml-auto space-x-3'>
+            <button
+              class='px-4 py-2 text-sm rounded-full font-bold text-white  border-primary bg-[#ffae00] transition-all ease-in-out duration-300 ring-1  hover:bg-[#1E2A47] hover:ring-2 focus:ring-2 ring-secondary outline-none ring-offset-2 hover:scale-110'>Contact</button>
+             
+      
+            <button id="toggleOpen" class='lg:hidden'>
+              <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      
+      
+
+
+      <div class="w-full mt-0">
+        <div class="relative">
+            <div id="carousel" class="carousel w-full">
+                <div class="carousel-item active">
+                    <img src="https://images.pexels.com/photos/3277808/pexels-photo-3277808.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 1" class="w-full h-[600px] object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-white text-center p-4 transition-opacity duration-2000 opacity-0 animate-fade-in">
+                            <h2 class="text-lg font-bold">Titre 1</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/3153203/pexels-photo-3153203.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 2" class="w-full h-[600px] object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-white text-center p-4 transition-transform duration-2000 transform scale-0 animate-scale-in">
+                            <h2 class="text-lg font-bold">Titre 2</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/3810792/pexels-photo-3810792.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 3" class="w-full h-[600px] object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-white text-center p-4 transition-all duration-2000 transform translate-y-10 opacity-0 animate-slide-in">
+                            <h2 class="text-lg font-bold">Titre 3</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2">❮</button>
+            <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2">❯</button>
+        </div>
+    </div>
+
+    <div class="bg-white border-l-8 ml-2 border-indigo-900  p-10 w-full font-[sans-serif] relative before:absolute before:left-0 before:top-0 before:w-2 before:h-full before:bg-primary">
+        <h1 class="text-4xl font-extrabold text-secondary">Bienvenu au LEVEL !</h1>
+        <div class="mt-4">
+          <p class="text-sm  text-gray-800 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et
+            tempus blandit, metus mi consectetur nibh, a pharetra felis turpis vitae ligula. Etiam laoreet velit nec neque
+            ultrices, non consequat mauris tincidunt.</p>
+        </div>
+        
+        <button type="button"
+          class="mt-8 px-6 py-3 text-white text-sm tracking-wider font-semibold rounded-md border-none outline-none bg-primary border-primary hover:scale-110 hover:ring-4 transition-all ease-in-out duration-300 ring-2  focus:ring-4  ring-secondary   ">Learn
+          more</button>
+      </div>
+    </div>
+
+
+    <div class="bg-gray-800 w-full font-[sans-serif]">
+      <div class="grid md:grid-cols-2 items-center md:max-h-[475px] overflow-hidden">
+        <div class="p-8">
+          <h1 class="sm:text-4xl text-2xl font-bold text-white">Readymadeui <span class="text-orange-400">Jumbotron Design</span></h1>
+          <p class="mt-4 text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
+            tempus blandit, metus mi consectetur nibh, a pharetra felis turpis vitae ligula. Etiam laoreet velit nec neque
+            ultrices, non consequat mauris tincidunt.</p>
+          <p class="mt-2 text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
+            tempus blandit, metus mi consectetur nibh.</p>
+          <button type="button"
+            class="px-6 py-3 mt-8 rounded-md text-white text-sm tracking-wider border-none outline-none bg-orange-500 hover:bg-orange-600">Get started</button>
+        </div>
+        <img src="https://readymadeui.com/team-image.webp" class="w-full h-full object-cover shrink-0" />
+      </div>
+    </div> 
+
+
+   
+
+</body>
+<script src="script.js"></script>
+
+
+<script>
+  const items = document.querySelectorAll('.carousel-item');
+  let currentIndex = 0;
+
+  function showItem(index) {
+      items.forEach((item, i) => {
+          item.classList.remove('active');
+          if (i === index) {
+              item.classList.add('active');
+          }
+      });
+  }
+
+  function nextItem() {
+      currentIndex = (currentIndex + 1) % items.length;
+      showItem(currentIndex);
+  }
+
+  function prevItem() {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      showItem(currentIndex);
+  }
+
+  document.getElementById('next').addEventListener('click', nextItem);
+  document.getElementById('prev').addEventListener('click', prevItem);
+
+  // Auto carousel  
+  setInterval(nextItem, 3000); // Change item every 3 seconds  
+</script>
+  
+</html>
