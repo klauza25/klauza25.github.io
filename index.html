@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <style>
     
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&display=swap');
@@ -209,6 +211,93 @@
       </div>
     </div>
 
+    <!-- LA team zone  -->
+
+
+
+   
+
+
+    <div class="bg-gray-50 text-gray-800 p-2 w-full rounded-lg font-[sans-serif] max-w-60xl mx-auto">
+      <h1 class="text-4xl font-extrabold text-center"> Equipe</h1>
+      <h2 class="mt-1 text-sm text-gray-600">
+        <div class="grid-cols-1 sm:grid md:grid-cols-3 m-5 ">
+          <div
+            class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+            <a href="#!">
+              <img
+                class="rounded-t-lg h-80"
+                src="https://tecdn.b-cdn.net/img/new/standard/city/044.webp"
+                alt="Skyscrapers" />
+            </a>
+            <div class="p-6">
+              <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+              <p class="mb-4 text-base">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div
+              class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center text-surface/75 dark:border-white/10 dark:text-neutral-300">
+             
+            </div>
+          </div>
+        
+          <div
+            class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+            <a href="#!">
+              <img
+                class="rounded-t-lg h-80"
+                src="https://tecdn.b-cdn.net/img/new/standard/city/043.webp"
+                alt="Los Angeles Skyscrapers" />
+            </a>
+            <div class="p-6">
+              <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+              <p class="mb-4 text-base">
+                This card has supporting text below as a natural lead-in to
+                additional content.
+              </p>
+            </div>
+            <div
+              class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center text-surface/75 dark:border-white/10 dark:text-neutral-300">
+             
+            </div>
+          </div>
+        
+          <div
+            class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+            <a href="#!">
+              <img
+                class="rounded-t-lg h-80"
+                src="https://tecdn.b-cdn.net/img/new/standard/city/042.webp"
+                alt="Palm Springs Road" />
+            </a>
+            <div class="p-6">
+              <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+              <p class="mb-4 text-base">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
+              </h2>
+            </div>
+            <div
+              class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center text-surface/75 dark:border-white/10 dark:text-neutral-300">
+              <button type="button"
+        class="px-6 py-3 mb-8 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-blue-900  hover:bg-primary justify-center flex mx-auto ">Voire plus</button>
+            </div>
+          </div>
+        </div>
+    
+
+
+
+      </p>
+
+     
+    </div>
+    <!-- FIN DE TEAM ZONE  -->
+
 
     <div class="bg-gray-800 w-full font-[sans-serif]">
       <div class="grid md:grid-cols-2 items-center md:max-h-[475px] overflow-hidden">
@@ -220,7 +309,7 @@
           <p class="mt-2 text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
             tempus blandit, metus mi consectetur nibh.</p>
           <button type="button"
-            class="px-6 py-3 mt-8 rounded-md text-white text-sm tracking-wider border-none outline-none bg-orange-500 hover:bg-orange-600">Get started</button>
+            class="px-6 py-3 mt-8 rounded-md text-white text-sm tracking-wider border-none outline-none bg-orange-500 hover:bg-orange-600 ring-2  focus:ring-4  ring-secondary hover:scale-110">Get started</button>
         </div>
         <img src="https://readymadeui.com/team-image.webp" class="w-full h-full object-cover shrink-0" />
       </div>
@@ -323,6 +412,33 @@
 
   // Auto carousel  
   setInterval(nextItem, 3000); // Change item every 3 seconds  
+
+
+  const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        // Autres options si nécessaire  
+    });
+
+
+    const images = document.querySelectorAll('#carousel img');
+    const totalImages = images.length;
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        document.getElementById('carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(showNextImage, 3000); // Change d'image toutes les 3 secondes 
+
 </script>
   
 </html>
