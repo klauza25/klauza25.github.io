@@ -10,12 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <style>
     
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&display=swap');
+
 
 
 
@@ -115,10 +114,10 @@ img {
   </style>
 </head>
 <body >
-    <header class=' flex shadow-md py-4 px-4 sm:px-10 bg-primary font-[sans-serif] min-h-[70px] tracking-wide fixed w-full z-50'>
+    <header class=' flex shadow-md py-4 px-4 sm:px-10 bg-primary  font-[sans-serif] min-h-[70px] tracking-wide fixed w-full z-50'>
         <div class='flex flex-wrap items-center justify-between gap-5 w-full text-4xl   font-bold'>
           
-          <a href="javascript:void(0)" class="text-secondary flex"><img src="logo.jpeg" class="w-16 h-10 rounded-full " alt="">le level
+          <a href="javascript:void(0)" class="text-secondary flex"><img src="logo.jpeg" class="w-16 h-10 rounded-full hidden" alt="">le level
           </a>
           <!-- <img src="" alt="logo" class='w-36' /> -->
           <div id="collapseMenu"
@@ -228,7 +227,7 @@ img {
         </div>
         
         <button type="button"
-          class="absolute mt-8 mb-28 px-6 py-3 text-white text-sm tracking-wider font-semibold rounded-md border-none outline-none bg-primary border-primary hover:scale-110 hover:ring-4 transition-all ease-in-out duration-300 ring-2  focus:ring-4  ring-secondary   ">Learn
+          class="absolute mt-8 px-6 py-3 text-white text-sm tracking-wider font-semibold rounded-md border-none outline-none bg-primary border-primary hover:scale-110 hover:ring-4 transition-all ease-in-out duration-300 ring-2  focus:ring-4  ring-secondary   ">Learn
           more</button>
       </div>
     </div>
@@ -240,10 +239,7 @@ img {
    
 
 
-    <div data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="1500"
-      class="bg-gray-50 text-gray-800 p-2  w-full rounded-lg font-[sans-serif] max-w-60xl mx-auto">
+    <div class="bg-gray-50 text-gray-800 p-2  w-full rounded-lg font-[sans-serif] max-w-60xl mx-auto">
       <h1 class="text-4xl font-extrabold text-center"> Equipe</h1>
       <h2 class="mt-1 text-sm text-gray-600">
         <div class="grid-cols-1 sm:grid md:grid-cols-3 m-5 ">
@@ -295,7 +291,7 @@ img {
             <a href="#!">
               <img
                 class="rounded-t-lg h-80"
-                src="img5.jpg"
+                src="https://tecdn.b-cdn.net/img/new/standard/city/042.webp"
                 alt="Palm Springs Road" />
             </a>
             <div class="p-6">
@@ -324,10 +320,9 @@ img {
     <!-- FIN DE TEAM ZONE  -->
 
 
-    <div data-aos="zoom-out-left" class="bg-gray-800 w-full font-[sans-serif]">
+    <div class="bg-gray-800 w-full font-[sans-serif]">
       <div class="grid md:grid-cols-2 items-center md:max-h-[475px] overflow-hidden">
-        <div data-aos="fade-up"
-     data-aos-duration="3000" class="p-8">
+        <div class="p-8">
           <h1 class="sm:text-4xl text-2xl font-bold text-white"> le level <span class="text-orange-400">Jumbotron Design</span></h1>
           <p class="mb-6 text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
             tempus blandit, metus mi consectetur nibh, a pharetra felis turpis vitae ligula. Etiam laoreet velit nec neque
@@ -335,7 +330,7 @@ img {
           <p class="mt-2 text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
             tempus blandit, metus mi consectetur nibh.</p>
           <button type="button"
-            class="px-6 py-3 mt-8 rounded-md text-white text-sm tracking-wider border-none outline-none bg-orange-500 hover:bg-orange-600 ring-2  focus:ring-4  ring-secondary hover:scale-110">Get started</button>
+            class="px-6 py-3 mt-5 rounded-md text-white text-sm tracking-wider border-none outline-none bg-orange-500 hover:bg-orange-600 ring-2  focus:ring-4  ring-secondary hover:scale-110">Get started</button>
         </div>
         <img src="https://i.pinimg.com/736x/62/9c/64/629c6417afcf3e7504aced99b03ab4c2.jpg" class="w-full  object-cover shrink-0 h-[300px]" />
       </div>
@@ -458,7 +453,5 @@ img {
   // Initial call to show the first item  
   showItem(currentIndex);
 </script>
-
-
-
+  
 </html>
