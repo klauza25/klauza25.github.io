@@ -17,38 +17,52 @@
 
 
 
-    ul{
-      transition-property: opacity, left;
-  transition-duration: 3s, 5s, 2s, 1s;
-  transition: all 1s ease-out;
-    }
-    .custom-border-color {
+
+
+/* Animation de transition pour l'opacité */
+.transition-opacity {
+    transition: opacity 0.5s ease-in-out; /* Réduire le temps ici si nécessaire */
+}
+
+/* Style de la liste avec transitions */
+ul {
+    transition-property: opacity, left;
+    transition-duration: 3s, 5s;
+    transition: all 1s ease-out;
+}
+
+/* Couleur de bordure personnalisée */
+.custom-border-color {
     border-color: #FFB001;
 }
 
-    .carousel-item{
+/* Style des éléments du carousel */
+.carousel-item {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    display: none; /* Masquer par défaut */
+    position: relative; /* Pour positionner le texte par-dessus l'image */
+    opacity: 0; /* Initialiser l'opacité à 0 */
+    transition: opacity 0.5s ease; /* Transition d'opacité */
+}
 
-      font-family: "Abril Fatface", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2em;
+/* Affichage de l'élément actif */
+.carousel-item.active {
+    display: block; /* Affiche l'élément actif */
+    opacity: 1; /* Rendre l'élément visible */
+}
 
-    }
-
-  img{
+/* Style des images */
+img {
     height: 650px;
-  }
-        .carousel-item {
-            display: none;
-            position: relative; /* Pour positionner le texte par-dessus l'image */
-        
-        
-          }
-        .carousel-item.active {
-            display: block;
-        }
-    
-        @keyframes fade-in {
+    width: 100%; /* Assure que l'image s'adapte à la largeur du conteneur */
+    object-fit: cover; /* Assure que l'image couvre l'élément sans déformation */
+}
+
+/* Animations */
+@keyframes fade-in {
     0% {
         opacity: 0;
     }
@@ -77,22 +91,24 @@
     }
 }
 
+/* Classes d'animation */
 .animate-fade-in {
-    animation: fade-in 2s forwards; /* Fade-in effect */
-    opacity: 1; /* Make sure to set it to 1 when the animation is done */
-    
-  
-
+    animation: fade-in 2s forwards; /* Effet de fondu */
 }
 
 .animate-scale-in {
-    animation: scale-in 2s forwards; /* Scale-in effect */
-    opacity: 1; /* Ensure opacity is 1 */
+    animation: scale-in 2s forwards; /* Effet de zoom */
 }
 
 .animate-slide-in {
-    animation: slide-in 2s forwards; /* Slide-in effect */
-    opacity: 1; /* Ensure opacity is 1 */
+    animation: slide-in 2s forwards; /* Effet de glissement */
+}
+
+/* Optionnel : Styles pour le texte dans les éléments du carousel */
+.carousel-item h2, .carousel-item p {
+    margin: 0; /* Élimine toute marge par défaut */
+    color: white; /* Texte blanc pour le contraste */
+    text-align: center; /* Centrer le texte */
 }
    
   </style>
@@ -101,7 +117,7 @@
     <header class=' flex shadow-md py-4 px-4 sm:px-10 bg-primary  font-[sans-serif] min-h-[70px] tracking-wide fixed w-full z-50'>
         <div class='flex flex-wrap items-center justify-between gap-5 w-full text-4xl   font-bold'>
           
-          <a href="javascript:void(0)" class="text-secondary flex"><img src="logo.jpeg" class="w-16 h-10 rounded-full" alt="">le level
+          <a href="javascript:void(0)" class="text-secondary flex"><img src="logo.jpeg" class="w-16 h-10 rounded-full hidden" alt="">le level
           </a>
           <!-- <img src="" alt="logo" class='w-36' /> -->
           <div id="collapseMenu"
@@ -160,44 +176,49 @@
       
       
 
+<!-- CAROUCEL -->
 
-      <div class="w-full mt-0">
-        <div class="relative">
-            <div id="carousel" class="carousel w-full">
-                <div class="carousel-item active">
-                    <img src="https://images.pexels.com/photos/3277808/pexels-photo-3277808.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 1" class="w-full h-[600px] object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                        <div class="text-white text-center p-4 transition-opacity duration-2000 opacity-0 animate-fade-in">
-                            <h2 class="text-4xl font-bold">Titre 1</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/3153203/pexels-photo-3153203.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 2" class="w-full h-[600px] object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                        <div class="text-white text-center p-4 transition-transform duration-2000 transform scale-0 animate-scale-in">
-                            <h2 class="text-4xl font-bold">Titre 2</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/3810792/pexels-photo-3810792.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 3" class="w-full h-[600px] object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                        <div class="text-white text-center p-4 transition-all duration-2000 transform translate-y-10 opacity-0 animate-slide-in">
-                            <h2 class="text-4xl font-bold">Titre 3</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2">❮</button>
-            <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2">❯</button>
-        </div>
-    </div>
 
-    <div class="h-80 bg-white ml-1 border-l-8 custom-border-color  p-10 w-full font-[sans-serif] relative before:absolute before:left-0 before:top-0 before:w-2 before:h-full before:bg-primary">
+<div class="w-full mt-0">
+  <div class="relative">
+      <div id="carousel" class="carousel w-full">
+          <div class="carousel-item active">
+              <img src="img1.jpg" alt="Image 1" class="w-full h-[600px] object-cover">
+              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <div class="text-white text-center p-4 transition-opacity duration-2000 opacity-0 animate-fade-in">
+                      <h2 class="text-4xl font-bold">Titre 1</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="img2.jpg" alt="Image 2" class="w-full h-[600px] object-cover">
+              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <div class="text-white text-center p-4 transition-opacity duration-2000 opacity-0 animate-fade-in">
+                      <h2 class="text-4xl font-bold">Titre 2</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="img3.jpg" alt="Image 3" class="w-full h-[600px] object-cover">
+              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <div class="text-white text-center p-4 transition-opacity duration-2000 opacity-0 animate-fade-in">
+                      <h2 class="text-4xl font-bold">Titre 3</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2">❮</button>
+      <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2">❯</button>
+  </div>
+</div>
+
+
+<!-- FIN DU CAROUCEL -->
+
+    <div class="h-80  bg-white ml-1 mb-6 border-l-8 custom-border-color  p-10 w-full font-[sans-serif] ab before:absolute before:left-0 before:top-0 before:w-2 before:h-full before:bg-primary">
         <h1 class="text-4xl font-extrabold text-secondary">Bienvenu au LEVEL !</h1>
         <div class="mt-4">
           <p class="text-sm  text-gray-800 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et
@@ -206,7 +227,7 @@
         </div>
         
         <button type="button"
-          class="mt-8 px-6 py-3 text-white text-sm tracking-wider font-semibold rounded-md border-none outline-none bg-primary border-primary hover:scale-110 hover:ring-4 transition-all ease-in-out duration-300 ring-2  focus:ring-4  ring-secondary   ">Learn
+          class="absolute mt-8 px-6 py-3 text-white text-sm tracking-wider font-semibold rounded-md border-none outline-none bg-primary border-primary hover:scale-110 hover:ring-4 transition-all ease-in-out duration-300 ring-2  focus:ring-4  ring-secondary   ">Learn
           more</button>
       </div>
     </div>
@@ -218,7 +239,7 @@
    
 
 
-    <div class="bg-gray-50 text-gray-800 p-2 w-full rounded-lg font-[sans-serif] max-w-60xl mx-auto">
+    <div class="bg-gray-50 text-gray-800 p-2  w-full rounded-lg font-[sans-serif] max-w-60xl mx-auto">
       <h1 class="text-4xl font-extrabold text-center"> Equipe</h1>
       <h2 class="mt-1 text-sm text-gray-600">
         <div class="grid-cols-1 sm:grid md:grid-cols-3 m-5 ">
@@ -227,7 +248,7 @@
             <a href="#!">
               <img
                 class="rounded-t-lg h-80"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/044.webp"
+                src="img4.jpg"
                 alt="Skyscrapers" />
             </a>
             <div class="p-6">
@@ -249,7 +270,7 @@
             <a href="#!">
               <img
                 class="rounded-t-lg h-80"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/043.webp"
+                src="img5.jpg"
                 alt="Los Angeles Skyscrapers" />
             </a>
             <div class="p-6">
@@ -283,8 +304,8 @@
             </div>
             <div
               class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center text-surface/75 dark:border-white/10 dark:text-neutral-300">
-              <button type="button"
-        class="px-6 py-3 mb-8 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-blue-900  hover:bg-primary justify-center flex mx-auto ">Voire plus</button>
+              <button type="button" 
+        class="px-6 py-3 mb-8 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-blue-900  hover:bg-primary justify-center flex mx-auto hover:scale-110 hover:ring-4 transition-all ease-in-out duration-300 ring-2  focus:ring-4  ring-secondary "> <a href="equipe.html">Voire Plus</a></button>
             </div>
           </div>
         </div>
@@ -388,11 +409,17 @@
   const items = document.querySelectorAll('.carousel-item');
   let currentIndex = 0;
 
+  function getRandomTransition() {
+      const transitions = ['fade-in', 'scale-in', 'slide-in'];
+      return transitions[Math.floor(Math.random() * transitions.length)];
+  }
+
   function showItem(index) {
       items.forEach((item, i) => {
-          item.classList.remove('active');
+          item.classList.remove('active', 'fade-in', 'scale-in', 'slide-in'); // Retire toutes les transitions  
           if (i === index) {
-              item.classList.add('active');
+              const transitionClass = getRandomTransition(); // Obtenez une classe de transition aléatoire  
+              item.classList.add('active', transitionClass); // Ajoutez la classe d'animation  
           }
       });
   }
@@ -411,34 +438,20 @@
   document.getElementById('prev').addEventListener('click', prevItem);
 
   // Auto carousel  
-  setInterval(nextItem, 3000); // Change item every 3 seconds  
+  let autoCarousel = setInterval(nextItem, 3000); // Change item every 3 seconds
 
+  // Pause auto carousel on mouse over  
+  document.querySelector('.carousel').addEventListener('mouseover', () => {
+      clearInterval(autoCarousel);
+  });
 
-  const swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        // Autres options si nécessaire  
-    });
+  // Resume auto carousel on mouse leave  
+  document.querySelector('.carousel').addEventListener('mouseleave', () => {
+      autoCarousel = setInterval(nextItem, 3000);
+  });
 
-
-    const images = document.querySelectorAll('#carousel img');
-    const totalImages = images.length;
-
-    function showNextImage() {
-        currentIndex = (currentIndex + 1) % totalImages;
-        document.getElementById('carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    setInterval(showNextImage, 3000); // Change d'image toutes les 3 secondes 
-
+  // Initial call to show the first item  
+  showItem(currentIndex);
 </script>
   
 </html>
