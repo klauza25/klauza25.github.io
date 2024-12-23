@@ -6,99 +6,21 @@
   <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js" type="module"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
     
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&display=swap');
 
-
-
-    ul{
-      transition-property: opacity, left;
-  transition-duration: 3s, 5s, 2s, 1s;
-  transition: all 1s ease-out;
-    }
-    .custom-border-color {
-    border-color: #FFB001;
-}
-
-.seconda{
+.seconda {
     background-color: #FFB001;
 }
 
-    .carousel-item{
-
-      font-family: "Abril Fatface", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2em;
-
-    }
-
-  img{
-    height: 650px;
-  }
-        .carousel-item {
-            display: none;
-            position: relative; /* Pour positionner le texte par-dessus l'image */
-        
-        
-          }
-        .carousel-item.active {
-            display: block;
-        }
-    
-        @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes scale-in {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes slide-in {
-    0% {
-        transform: translateY(10px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.animate-fade-in {
-    animation: fade-in 2s forwards; /* Fade-in effect */
-    opacity: 1; /* Make sure to set it to 1 when the animation is done */
-    
-  
-
-}
-
-.animate-scale-in {
-    animation: scale-in 2s forwards; /* Scale-in effect */
-    opacity: 1; /* Ensure opacity is 1 */
-}
-
-.animate-slide-in {
-    animation: slide-in 2s forwards; /* Slide-in effect */
-    opacity: 1; /* Ensure opacity is 1 */
-}
-   
   </style>
 </head>
 <body >
@@ -205,17 +127,19 @@
       <!-- la team zone  -->
       <div class="font-[sans-serif] bg-gray-50 p-4">
         <div class="max-w-5xl max-sm:max-w-sm mx-auto">
-            <h2 class="text-gray-800 text-4xl font-extrabold text-center">Meet Our Team</h2>
+            <h2 class="text-gray-800 text-4xl font-extrabold text-center" data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">Meet Our Team</h2>
 
             <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 text-center mt-12">
-                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
+                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500" data-aos="fade-down">
                     <img src="https://readymadeui.com/team-1.webp" class="w-36 h-36 rounded-full inline-block" />
 
                     <div class="mt-4">
                         <h4 class="text-gray-800 text-base font-bold">John Doe</h4>
                         <p class="text-gray-600 text-xs mt-1">Software Engineer</p>
 
-                        <div class="space-x-4 mt-4">
+                        <div class="space-x-4 mt-4" >
                             <button type="button"
                                 class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-gray-100 hover:bg-gray-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12px" class="fill-gray-800" viewBox="0 0 155.139 155.139">
@@ -246,7 +170,8 @@
                 <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
                     <img src="https://readymadeui.com/team-2.webp" class="w-36 h-36 rounded-full inline-block" />
 
-                    <div class="mt-4">
+                    <div class="mt-4" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom" >
                         <h4 class="text-gray-800 text-base font-bold">Mark Adair</h4>
                         <p class="text-gray-600 text-xs mt-1">Software Engineer</p>
 
@@ -278,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
+                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500"  data-aos="zoom-in-left" >
                     <img src="https://readymadeui.com/team-3.webp" class="w-36 h-36 rounded-full inline-block" />
 
                     <div class="mt-4">
@@ -313,7 +238,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
+                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500"  data-aos="fade-left">
                     <img src="https://readymadeui.com/team-4.webp" class="w-36 h-36 rounded-full inline-block" />
 
                     <div class="mt-4">
@@ -348,7 +273,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
+                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500" data-aos="fade-ri">
                     <img src="https://readymadeui.com/team-5.webp" class="w-36 h-36 rounded-full inline-block" />
 
                     <div class="mt-4">
@@ -383,7 +308,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
+                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500"  data-aos="fade-left">
                     <img src="https://readymadeui.com/team-6.webp" class="w-36 h-36 rounded-full inline-block" />
 
                     <div class="mt-4">
@@ -418,7 +343,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
+                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500"  data-aos="fade-right">
                     <img src="https://readymadeui.com/team-1.webp" class="w-36 h-36 rounded-full inline-block" />
 
                     <div class="mt-4">
@@ -453,7 +378,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500">
+                <div class="bg-white py-4 px-2 shadow-md rounded-lg hover:scale-110 transition-all duration-500"  data-aos="fade-down-right">
                     <img src="https://readymadeui.com/team-2.webp" class="w-36 h-36 rounded-full inline-block" />
 
                     <div class="mt-4">
@@ -492,6 +417,20 @@
         </div>
     </div>
 
+    <div class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10">
+      <img src="https://readymadeui.com/cardImg.webp" alt="Banner Image" class="absolute inset-0 w-full h-full object-cover" />
+
+      <div class="min-h-[350px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6"  data-aos="fade-down-right">
+        <h2 class="sm:text-4xl text-2xl font-bold mb-6">Explore the World</h2>
+        <p class="sm:text-lg text-base text-center text-gray-200">Embark on unforgettable journeys. Book your dream vacation today!</p>
+
+        <button
+          type="button"
+          class="mt-12 bg-transparent text-white text-base py-3 px-6 border border-white rounded-lg hover:bg-white hover:text-black transition duration-300">
+          Book Now
+        </button>
+      </div>
+    </div>
    
 <!-- LE fouteur  -->
 
@@ -558,4 +497,7 @@
 
 </body>
 <script src="script.js"></script>
+<script>
+  AOS.init();
+</script>
 </html>
