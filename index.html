@@ -3,115 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js" type="module"></script>
+
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="./output.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <style>
-    
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&display=swap');
-
-
-
-
-
-/* Animation de transition pour l'opacité */
-.transition-opacity {
-    transition: opacity 0.5s ease-in-out; /* Réduire le temps ici si nécessaire */
-}
-
-/* Style de la liste avec transitions */
-ul {
-    transition-property: opacity, left;
-    transition-duration: 3s, 5s;
-    transition: all 1s ease-out;
-}
-
-/* Couleur de bordure personnalisée */
-.custom-border-color {
-    border-color: #FFB001;
-}
-
-/* Style des éléments du carousel */
-.carousel-item {
-    font-family: "Abril Fatface", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2em;
-    display: none; /* Masquer par défaut */
-    position: relative; /* Pour positionner le texte par-dessus l'image */
-    opacity: 0; /* Initialiser l'opacité à 0 */
-    transition: opacity 0.5s ease; /* Transition d'opacité */
-}
-
-/* Affichage de l'élément actif */
-.carousel-item.active {
-    display: block; /* Affiche l'élément actif */
-    opacity: 1; /* Rendre l'élément visible */
-}
-
-/* Style des images */
-img {
-    height: 650px;
-    width: 100%; /* Assure que l'image s'adapte à la largeur du conteneur */
-    object-fit: cover; /* Assure que l'image couvre l'élément sans déformation */
-}
-
-/* Animations */
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes scale-in {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes slide-in {
-    0% {
-        transform: translateY(10px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Classes d'animation */
-.animate-fade-in {
-    animation: fade-in 2s forwards; /* Effet de fondu */
-}
-
-.animate-scale-in {
-    animation: scale-in 2s forwards; /* Effet de zoom */
-}
-
-.animate-slide-in {
-    animation: slide-in 2s forwards; /* Effet de glissement */
-}
-
-/* Optionnel : Styles pour le texte dans les éléments du carousel */
-.carousel-item h2, .carousel-item p {
-    margin: 0; /* Élimine toute marge par défaut */
-    color: white; /* Texte blanc pour le contraste */
-    text-align: center; /* Centrer le texte */
-}
-   
-  </style>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body >
     <header class=' flex shadow-md py-4 px-4 sm:px-10 bg-primary  font-[sans-serif] min-h-[70px] tracking-wide fixed w-full z-50'>
@@ -242,12 +142,14 @@ img {
     <div class="bg-gray-50 text-gray-800 p-2  w-full rounded-lg font-[sans-serif] max-w-60xl mx-auto">
       <h1 class="text-4xl font-extrabold text-center"> Equipe</h1>
       <h2 class="mt-1 text-sm text-gray-600">
-        <div class="grid-cols-1 sm:grid md:grid-cols-3 m-5 ">
+        <div class="grid-cols-1 sm:grid md:grid-cols-3 m-5 " data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
           <div
-            class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+            class="scro mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
             <a href="#!">
               <img
-                class="rounded-t-lg h-80"
+                class="rounded-t-lg h-80 scro"
                 src="img4.jpg"
                 alt="Skyscrapers" />
             </a>
@@ -266,10 +168,10 @@ img {
           </div>
         
           <div
-            class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+            class="scro mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0" data-aos="fade-right">
             <a href="#!">
               <img
-                class="rounded-t-lg h-80"
+                class="rounded-t-lg h-80 "
                 src="img5.jpg"
                 alt="Los Angeles Skyscrapers" />
             </a>
@@ -287,11 +189,11 @@ img {
           </div>
         
           <div
-            class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+            class="scro mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0" data-aos="fade-up-left">
             <a href="#!">
               <img
-                class="rounded-t-lg h-80"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/042.webp"
+                class="rounded-t-lg h-80 "
+                src="img6.jpg"
                 alt="Palm Springs Road" />
             </a>
             <div class="p-6">
@@ -320,9 +222,9 @@ img {
     <!-- FIN DE TEAM ZONE  -->
 
 
-    <div class="bg-gray-800 w-full font-[sans-serif]">
+    <div class="bg-gray-800 w-full font-[sans-serif]" >
       <div class="grid md:grid-cols-2 items-center md:max-h-[475px] overflow-hidden">
-        <div class="p-8">
+        <div class="p-8" data-aos="fade-down-left">
           <h1 class="sm:text-4xl text-2xl font-bold text-white"> le level <span class="text-orange-400">Jumbotron Design</span></h1>
           <p class="mb-6 text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
             tempus blandit, metus mi consectetur nibh, a pharetra felis turpis vitae ligula. Etiam laoreet velit nec neque
@@ -332,7 +234,8 @@ img {
           <button type="button"
             class="px-6 py-3 mt-5 rounded-md text-white text-sm tracking-wider border-none outline-none bg-orange-500 hover:bg-orange-600 ring-2  focus:ring-4  ring-secondary hover:scale-110">Get started</button>
         </div>
-        <img src="https://i.pinimg.com/736x/62/9c/64/629c6417afcf3e7504aced99b03ab4c2.jpg" class="w-full  object-cover shrink-0 h-[300px]" />
+        <img src="https://i.pinimg.com/736x/62/9c/64/629c6417afcf3e7504aced99b03ab4c2.jpg" class="w-full  object-cover shrink-0 h-[300px]" data-aos="flip-down"
+         />
       </div>
     </div> 
 
@@ -452,6 +355,10 @@ img {
 
   // Initial call to show the first item  
   showItem(currentIndex);
+</script>
+
+<script>
+  AOS.init();
 </script>
   
 </html>
